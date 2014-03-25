@@ -1,0 +1,19 @@
+/*------------------------------------*\
+  #MIXINS
+\*------------------------------------*/
+
+/**
+ * Font size mixin.
+ *
+ * Stolen from InuitCSS by Harry Roberts.
+ */
+
+@mixin tact-font-size($tact-font-size, $tact-line-height: true) {
+  font-size: $tact-font-size;
+  font-size: ($tact-font-size / $tact-base-font-size) * 1rem;
+
+  @if $tact-line-height == true {
+    line-height: ceil($tact-font-size / $tact-base-line-height) *
+                     ($tact-base-line-height / $tact-font-size);
+  }
+}
